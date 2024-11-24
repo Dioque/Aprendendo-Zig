@@ -7,6 +7,10 @@ pub fn main() void {
     const retornaF32 = retornaFloat32();
     const optionalVal = optional();
 
+    const numeroRetorn = addNumero1(3);
+
+    print("O numero retornado é {}\n", .{numeroRetorn});
+
     print("one_plus_one = {}\nseven_div_three = {}\n", .{ retornaI32, retornaF32 });
     print("optional_Value = {?s}\n", .{optionalVal});
 }
@@ -28,3 +32,15 @@ pub fn optional() ?[]const u8 {
 
     return optional_Value;
 }
+
+test "SeraQue Funciona" {
+    try std.testing.expect(1 == 1);
+}
+
+var numeroOrigin: i32 = undefined;
+pub fn addNumero1(numero: i32) i32 {
+    numeroOrigin = numero + 1;
+
+    return numeroOrigin;
+}
+
